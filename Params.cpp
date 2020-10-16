@@ -17,9 +17,9 @@ Params(int argc, char* argv[]) {
         argName = string(argv[i]);
         commands.append(argName + " ");
         cmdlne.push_back(argName);
-
+        s = argName.size();
         if(isalnum(argName[0]) && (i > 0 && cmdlne[i-1][0] != '-') ) {
-            searchWords.append(argName.substr(0, s-1) + " ");
+            searchWords.append(argName.substr(0, s) + " ");
         }
     }
     
