@@ -2,25 +2,11 @@
 
 Params::
 Params(int argc, char* argv[]) {
-    int    s;
     string argName;
 
-    pathname = nullptr;
-    dirPath = " ";
-    commands = " ";
-    recursive = false;
-    verbose = false;
-    caseSens = false;
-    output = false;
-
-    for(int i = 0; i < argc; ++i) {
+    for(int i = 1; i < argc; ++i) {  // changed i from 0 to 1
         argName = string(argv[i]);
         commands.append(argName + " ");
-        cmdlne.push_back(argName);
-        s = argName.size();
-        if(isalnum(argName[0]) && (i > 0 && cmdlne[i-1][0] != '-') ) {
-            searchWords.append(argName.substr(0, s) + " ");
-        }
     }
     
     processCL(argc, argv);
@@ -46,6 +32,11 @@ processCL(int argc, char* argv[]) {
             case '?': 
             default:  usage(4); break;
         }
+
+        // if(optind < argc && argv[optind][0] != '-') {
+        //     searchWords.push_back(string(argv[optind]));
+        //     cout << "AYAYA" << string(argv[optind]) << '\n';
+        // }
 
         if(dirPath.empty()) usage(3);
     }

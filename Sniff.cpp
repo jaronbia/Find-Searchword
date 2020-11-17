@@ -2,14 +2,17 @@
 
 Sniff:: 
 Sniff(int argc, char* argv[]) : prm(argc, argv) {
-    //string w(argv[1]);
-    string word;
-    istringstream swrd(prm.searchWords);
-    
+    string curr = " ";
+    string prev = " ";
+    istringstream swrd(prm.commands);
+  
+    // process sniff words
     for(;;) {
-        swrd >> word;
+        swrd >> curr;
         if(swrd.eof()) break;
-        sniffWords.push_back(word);
+        if(prev[0] != '-' && curr[0] != '-')
+            sniffWords.push_back(curr);
+        prev = curr;
     }
 
     oneDir();
