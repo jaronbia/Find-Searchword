@@ -17,16 +17,16 @@ class Params {
             {  0,        0,                 0,  0  }
         };
 
-        char*    pathname;              // Path name for file out
-        string   dirPath;               // Search Directory path name
-        string   commands;              // String of command line args
-        string   searchWords;           // Add search words in vector here
-        vector<string> cmdlne;    // Add search words in vector here
+        char*    pathname = nullptr;              // Path name for file out
+        string   dirPath = " ";               // Search Directory path name
+        string   commands = " ";              // String of command line args
+        //string   searchWords;           // Add search words in vector here
+        vector<string> searchWords;     // Add search words in vector here
         ofstream fileout;               // File to output
-        bool recursive;                 // Is Recursive?
-        bool verbose;                   // Is Verbose?
-        bool caseSens;                  // Is Case Insensitive?
-        bool output;                    // Is Recursive?
+        bool recursive = false;                 // Is Recursive?
+        bool verbose = false;                   // Is Verbose?
+        bool caseSens = false;                  // Is Case Insensitive?
+        bool output = false;                    // Is Recursive?
 
         void usage(const int err);
         void processCL(int argc, char* argv[]);   // Process command line arguments
@@ -45,7 +45,7 @@ class Params {
         }
 
         // File non existent or filename starts w/ '-' then no valid file name given
-        bool invalidOpt()  { return !optarg || optarg[0] == '-'; }
+        bool invalidOpt() { return !optarg || optarg[0] == '-'; }
 
     public:
         Params(int argc, char* argv[]);
