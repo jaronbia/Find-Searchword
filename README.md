@@ -1,5 +1,3 @@
-# findit
-
 # Description
 Findit is a program designed to search word files for search/sniff words. 
 
