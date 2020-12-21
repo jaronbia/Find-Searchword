@@ -24,7 +24,7 @@ class FileID {
 
         bool swrdEmpty() { return sniffWords.empty(); }
 
-        void insertSniff(string word) {
+        void insertSniff(string word) {     //vector<string>::iterator it;
             auto it = find(sniffWords.begin(), sniffWords.end(), word);
             if(it == sniffWords.end()) sniffWords.push_back(word);
         }
