@@ -6,6 +6,7 @@ c++ -std=c++17 -o main *.cpp
 
 # Run
 If you want to look for the word CSCI in Folder1 then print out to found.txt
+
 main --dir /Folder1 CSCI --verbose
 
 # Future Plans
