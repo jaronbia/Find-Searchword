@@ -33,11 +33,6 @@ processCL(int argc, char* argv[]) {
             default:  usage(4); break;
         }
 
-        // if(optind < argc && argv[optind][0] != '-') {
-        //     searchWords.push_back(string(argv[optind]));
-        //     cout << "AYAYA" << string(argv[optind]) << '\n';
-        // }
-
         if(dirPath.empty()) usage(3);
     }
 }
